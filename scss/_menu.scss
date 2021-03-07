@@ -1,0 +1,193 @@
+@import "media";
+
+//Dark color theme
+
+body {
+  &.dark {
+    .btn-line {
+      background: set-text-col($primary-color-dark);
+    }
+    .menu {
+      &-nav {
+        background: darken($primary-color-dark, $amount: 6);
+        border: 10px solid darken($primary-color-dark, $amount: 3);
+      }
+      &-pic {
+        background: $primary-color-dark;
+        border: 10px solid darken($primary-color-dark, $amount: 3);
+      }
+    }
+    .nav-item {
+      &.current > a {
+        color: darken($secondary-color, $amount: 3);
+      }
+      .nav-link {
+        color: set-text-col($primary-color-dark);
+
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+//menu button
+.menu-btn {
+  position: fixed;
+  z-index: 4;
+  left: 8px;
+  top: 8px;
+  cursor: pointer;
+  @include easeIn;
+
+  .btn-line {
+    width: 38px;
+    height: 7px;
+    margin: 0px 0px 5px 0px;
+    background: lighten(set-text-col($primary-color), 10%);
+    opacity: 0.8;
+    @include easeIn;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(black, 0.5);
+  }
+
+  //Menu lines
+  &.close {
+    transform: rotate(135deg);
+
+    .btn-line {
+      //line1
+      &:nth-child(1) {
+        background: rgba(
+          darken($secondary-color, $amount: 20),
+          $background-opacity
+        );
+        box-shadow: none;
+        transform: translate(3.9px, -1px) rotate(50deg) scale(0.5, 1);
+      }
+      //line2
+      &:nth-child(2) {
+        background: rgba(
+          darken($secondary-color, $amount: 20),
+          $background-opacity
+        );
+        box-shadow: none;
+        transform: translate(0px, -2px) rotate(90deg) scale(1, 1);
+      }
+      //line3
+      &:nth-child(3) {
+        background: rgba(
+          darken($secondary-color, $amount: 20),
+          $background-opacity
+        );
+
+        box-shadow: none;
+        transform: translate(-3.9px, -25px) rotate(-50deg) scale(0.5, 1);
+      }
+    }
+  }
+}
+
+//Menu Overlay
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+  &.show {
+    visibility: visible;
+  }
+
+  &-pic,
+  &-nav {
+    display: flex;
+    float: right;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+  }
+
+  &-nav {
+    background: darken($primary-color, $amount: 12);
+    border: 10px solid darken($primary-color, $amount: 3);
+    list-style: none;
+    transform: translate3d(-100%, 0, 0);
+    @include easeIn;
+    opacity: 0.9;
+    margin: 0px 0px 0 10px;
+    &.show {
+      //slide in
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  //picture side
+  &-pic {
+    background: darken($primary-color, $amount: 8);
+    border: 10px solid darken($primary-color, $amount: 3);
+    list-style: none;
+    transform: translate3d(100%, 0, 0);
+    @include easeIn;
+    opacity: 0.95;
+    margin: 0 0px 10px 10px;
+
+    &.show {
+      //slide in
+      transform: translate3d(0, 0, 0);
+    }
+
+    .mainpic {
+      width: 250px;
+      height: 250px;
+      background: url("../img/mainpic.jpg");
+      background-size: contain;
+      border-radius: 50%;
+      border: 3px solid darken($primary-color, $amount: 3);
+      box-shadow: 0 5px 10px rgba(black, 0.5);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+    }
+  }
+
+  .nav-item {
+    transform: translate3d(600px, -0, 0);
+    @include easeIn;
+    &.show {
+      //slide in
+      transform: translate3d(0, 0, 0);
+    }
+    &.current > a {
+      color: darken($secondary-color, $amount: 3);
+      text-shadow: 1px 1px 2px
+          rgba(darken($secondary-color, $amount: 20), $background-opacity),
+        0 0 1em rgb(58, 0, 0), 0 0 0.2em rgb(58, 0, 0);
+    }
+    .nav-link {
+      color: set-text-col($primary-color);
+      align-content: center;
+      display: inline-block;
+      position: relative;
+      font-size: 1rem;
+      text-transform: uppercase;
+      padding: 1rem 0;
+      font-weight: 600;
+      @include easeIn;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+//Delay for nav items(for-loop)
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
+  }
+}

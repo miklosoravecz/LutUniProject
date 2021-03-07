@@ -1,0 +1,1200 @@
+//Smart phone
+@include mediaSmartPhone {
+  .img1,
+  .img2,
+  .img3,
+  .img4,
+  .img5,
+  .img7,
+  .img8,
+  .img9 {
+    background-attachment: scroll;
+    margin-bottom: 40px;
+  }
+  .img1 {
+    background-image: url("../img/main-small.jpg");
+    margin-bottom: 20px;
+    box-shadow: none;
+  }
+  .img2 {
+    margin-bottom: 80px;
+  }
+  .img5,
+  .img7,
+  .img8 {
+    height: 400px;
+    .text {
+      position: absolute;
+      top: 30%;
+    }
+  }
+  main {
+    padding: 0.5rem;
+  }
+  #home-title {
+    padding-top: 10vh;
+    font-size: 2em;
+  }
+  #home-subtitle {
+    padding-top: 0;
+    font-size: 2em;
+  }
+  strong {
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+  }
+  p.paragraph {
+    font-size: 17px;
+    padding: 20px;
+  }
+  h2.sm-heading {
+    font-size: 1em;
+    padding: 5px;
+    margin: 5px;
+  }
+  .menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0;
+    padding: 0;
+    align-content: center;
+
+    .btn.btn-line {
+      width: 18px;
+      height: 5px;
+    }
+    &-pic,
+    &-nav {
+      float: none;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
+    }
+    &-nav {
+      height: 60vh;
+      box-shadow: none;
+      .nav-link {
+        font-size: 1.5em;
+      }
+    }
+    &-pic {
+      height: 40vh;
+      box-shadow: none;
+      .mainpic {
+        width: 150px;
+        height: 150px;
+        background-image: url("../img/mainpic-small.jpg");
+        box-shadow: 10px 10px 5px darken($primary-color, $amount: 12);
+      }
+    }
+  }
+  //developer page
+  #dev-home {
+    display: block;
+    background-image: url("../img/dev.jpg");
+    background-attachment: scroll;
+
+    overflow: hidden;
+    .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      .developer,
+      .dev-pic,
+      .content {
+        margin: 0;
+        padding: 0;
+        padding-top: 2rem;
+        padding: 0.5rem;
+        width: 100%;
+        height: 20rem;
+      }
+      .dev-pic {
+        height: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        .pic {
+          background-image: url("../img/portrait-small.jpg");
+          width: 42vh;
+          height: 35vh;
+          background-size: cover;
+          background-repeat: no-repeat;
+          margin: 0.4rem;
+        }
+      }
+      .content {
+        padding-bottom: 5rem;
+      }
+
+      .dev-title {
+        font-size: 1.2rem;
+        &::first-letter {
+          font-size: 1.5rem;
+        }
+      }
+
+      .dev-subt {
+        font-size: 1rem;
+
+        &::first-letter {
+          font-size: 1.2rem;
+        }
+      }
+      .dev-p {
+        text-align: center;
+        padding-top: 1rem;
+      }
+
+      a {
+        color: set-text-col($primary-color-dark);
+        @include easeIn;
+      }
+    }
+    .source {
+      .dev-subt {
+        font-size: 1rem;
+
+        &::first-letter {
+          font-size: 1.2rem;
+        }
+      }
+      .dev-p {
+        font-size: 0.7;
+        padding: 0rem;
+      }
+      a {
+        text-align: center;
+        font-size: 0.3rem;
+      }
+    }
+  }
+
+  //food menu page
+  .menu-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+      "menuimage"
+      " intro"
+      "intro "
+      "dish1"
+      " dish2"
+      "dish3"
+      "dish4"
+      " dish5"
+      "dish6";
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+
+    .para {
+      padding: 20px;
+      font-size: 1rem;
+    }
+    .menu-img {
+      margin-top: 35px;
+    }
+    .d-title {
+      font-size: 1.2rem;
+    }
+    .d-subt {
+      font-size: 0.8rem;
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+  }
+  .restaurants-info {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+      "restaurantimage"
+      "intro"
+      "intro"
+      "restaurant1"
+      "restaurant2"
+      "restaurant3"
+      "restaurant4"
+      "restaurant5"
+      "restaurant6";
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+
+    .para {
+      padding: 20px;
+      font-size: 1rem;
+    }
+    .adress-p {
+      padding: 20px;
+      font-size: 1.2rem;
+    }
+    .restaurants-img {
+      margin-top: 35px;
+    }
+    .adress-title {
+      font-size: 1.4rem;
+    }
+  }
+  //contact page
+  #contact {
+    .intro .contact-info {
+      font-size: 1rem;
+    }
+    .boxes {
+      div {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+//Small screen
+@include mediaSmall {
+  .img1,
+  .img2,
+  .img3,
+  .img4,
+  .img5,
+  .img7,
+  .img8,
+  .img9 {
+    background-attachment: scroll;
+    margin-bottom: 40px;
+  }
+  .img1 {
+    background-image: url("../img/main-small.jpg");
+    margin-bottom: 20px;
+    box-shadow: none;
+  }
+  .img2 {
+    margin-bottom: 80px;
+  }
+  .img5,
+  .img7,
+  .img8 {
+    height: 500px;
+    .text {
+      position: absolute;
+      top: 40%;
+    }
+  }
+  .img9 {
+    margin-top: 3rem;
+  }
+  main {
+    padding: 0.5rem;
+  }
+  #home-title {
+    padding-top: 10vh;
+    font-size: 2em;
+  }
+  #home-subtitle {
+    padding-top: 0;
+    font-size: 2em;
+  }
+  strong {
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+  }
+  p.paragraph {
+    margin-top: 1000;
+    font-size: 17px;
+    padding: 20px;
+  }
+  h2.sm-heading {
+    font-size: 1em;
+    padding: 5px;
+    margin: 5px;
+  }
+  .menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0;
+    padding: 0;
+    align-content: center;
+
+    .btn.btn-line {
+      width: 18px;
+      height: 5px;
+    }
+    &-pic,
+    &-nav {
+      float: none;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
+    }
+    &-nav {
+      height: 60vh;
+      box-shadow: none;
+      .nav-link {
+        font-size: 1.5em;
+      }
+    }
+    &-pic {
+      height: 40vh;
+      box-shadow: none;
+      .mainpic {
+        width: 200px;
+        height: 200px;
+        background-image: url("../img/mainpic-small.jpg");
+        box-shadow: 10px 10px 5px darken($primary-color, $amount: 12);
+      }
+    }
+  }
+  .menu-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+      "menuimage"
+      " intro"
+      "intro "
+      "dish1"
+      " dish2"
+      "dish3"
+      "dish4"
+      " dish5"
+      "dish6";
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+
+    .para {
+      padding: 30px;
+      font-size: 1.2rem;
+    }
+    .menu-img {
+      margin-top: 40px;
+    }
+    .d-title {
+      font-size: 1.3rem;
+    }
+    .d-subt {
+      font-size: 1rem;
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+  }
+
+  .restaurants-info {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+      "restaurantimage"
+      "intro"
+      "intro"
+      "restaurant1"
+      "restaurant2"
+      "restaurant3"
+      "restaurant4"
+      "restaurant5"
+      "restaurant6";
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+
+    .para {
+      padding: 30px;
+      font-size: 1.2rem;
+    }
+    .adress-p {
+      padding: 20px;
+      font-size: 1.2rem;
+    }
+    .restaurants-img {
+      margin-top: 40px;
+    }
+    .adress-title {
+      font-size: 1.5rem;
+    }
+  }
+  //developer page
+  #dev-home {
+    display: block;
+    background-image: url("../img/dev.jpg");
+    background-attachment: scroll;
+
+    overflow: hidden;
+    .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      .developer,
+      .dev-pic,
+      .content {
+        padding: 0.3rem;
+        height: 20rem;
+      }
+      .dev-pic {
+        height: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        width: 70%;
+        .pic {
+          display: block;
+          width: 100%;
+          height: 70%;
+          background-image: url("../img/portrait-small.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+      .content {
+        padding-bottom: 5rem;
+      }
+      .developer,
+      .content {
+        margin: 0;
+        padding-top: 2rem;
+      }
+      .dev-title {
+        font-size: 1.2rem;
+        &::first-letter {
+          font-size: 1.5rem;
+        }
+      }
+
+      .dev-subt {
+        font-size: 1rem;
+
+        &::first-letter {
+          font-size: 1.2rem;
+        }
+      }
+      .dev-p {
+        text-align: center;
+        padding-top: 1rem;
+      }
+
+      a {
+        color: set-text-col($primary-color-dark);
+        @include easeIn;
+      }
+    }
+    .source {
+      .dev-subt {
+        font-size: 1rem;
+
+        &::first-letter {
+          font-size: 1.2rem;
+        }
+      }
+      .dev-p {
+        font-size: 0.7;
+        padding: 0rem;
+      }
+      a {
+        text-align: center;
+        font-size: 0.6rem;
+      }
+    }
+  }
+  //contact page
+  #contact {
+    .intro .contact-info {
+      font-size: 1rem;
+    }
+    .boxes {
+      div {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+//Medium screen
+@include mediaMedium {
+  .img2 {
+    margin-bottom: 0;
+  }
+  .img9 {
+    margin-top: 2.8rem;
+  }
+  main {
+    padding: 2rem;
+  }
+  #home-title {
+    padding-top: 10vh;
+    font-size: 3em;
+  }
+  #home-subtitle {
+    padding-top: 0;
+  }
+  .menu-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+      "menuimage"
+      " intro"
+      "intro "
+      "dish1"
+      " dish2"
+      "dish3"
+      "dish4"
+      " dish5"
+      "dish6";
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+
+    .para {
+      padding: 30px;
+      font-size: 1.2rem;
+    }
+    .menu-img {
+      margin-top: 40px;
+    }
+    .d-title {
+      font-size: 1.3rem;
+    }
+    .d-subt {
+      font-size: 1rem;
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+  }
+  .restaurants-info {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+      "restaurantimage"
+      "intro"
+      "intro"
+      "restaurant1"
+      "restaurant2"
+      "restaurant3"
+      "restaurant4"
+      "restaurant5"
+      "restaurant6";
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+
+    .para {
+      padding: 30px;
+      font-size: 1.2rem;
+    }
+    .adress-p {
+      padding: 20px;
+      font-size: 1.4rem;
+    }
+    .restaurants-img {
+      margin-top: 40px;
+    }
+    .adress-title {
+      font-size: 1.8rem;
+    }
+  }
+  //developer page
+  #dev-home {
+    display: block;
+    background-image: url("../img/dev.jpg");
+    background-attachment: scroll;
+
+    overflow: hidden;
+    .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      .developer,
+      .dev-pic,
+      .content {
+        padding: 0.3rem;
+        height: 20rem;
+      }
+      .dev-pic {
+        height: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        width: 70%;
+        .pic {
+          display: block;
+          width: 100%;
+          height: 70%;
+          background-image: url("../img/portrait-small.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+      .content {
+        padding-bottom: 5rem;
+      }
+      .developer,
+      .content {
+        margin: 0;
+        padding-top: 2rem;
+      }
+      .dev-title {
+        font-size: 1.2rem;
+        &::first-letter {
+          font-size: 1.5rem;
+        }
+      }
+
+      .dev-subt {
+        font-size: 1rem;
+
+        &::first-letter {
+          font-size: 1.2rem;
+        }
+      }
+
+      .dev-p {
+        text-align: center;
+        padding-top: 1rem;
+      }
+
+      a {
+        color: set-text-col($primary-color-dark);
+        @include easeIn;
+      }
+    }
+    .source {
+      .dev-subt {
+        font-size: 1rem;
+
+        &::first-letter {
+          font-size: 1.2rem;
+        }
+      }
+      .dev-p {
+        font-size: 0.7;
+        padding: 0rem;
+      }
+      a {
+        text-align: center;
+        font-size: 0.6rem;
+      }
+    }
+  }
+}
+//MediumXL screen
+@include mediaMediumXL {
+  .img2 {
+    margin-bottom: 0;
+  }
+  .img9 {
+    margin-top: 1.8rem;
+  }
+  main {
+    padding: 2rem;
+  }
+  #home-title {
+    padding-top: 10vh;
+    font-size: 3em;
+  }
+  #home-subtitle {
+    padding-top: 0;
+  }
+  .menu-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+      "menuimage intro"
+      "dish1 dish2"
+      "dish3 dish4"
+      "dish5 dish6";
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 40px;
+
+    .para {
+      padding: 30px;
+      font-size: 1.2rem;
+      margin-top: 2.5rem;
+    }
+    .menu-img {
+      margin-top: 40px;
+    }
+    .d-title {
+      font-size: 1.3rem;
+    }
+    .d-subt {
+      font-size: 1rem;
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+  }
+  .restaurants-info {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+      "restaurantimage intro"
+      "restaurant1 restaurant2"
+      "restaurant3 restaurant4"
+      "restaurant5 restaurant6";
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 40px;
+
+    .para {
+      padding: 30px;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+    .adress-p {
+      padding: 20px;
+      font-size: 1rem;
+    }
+    .restaurants-img {
+      margin-top: 40px;
+    }
+    .adress-title {
+      font-size: 1.4rem;
+    }
+  }
+  //developer page
+  #dev-home {
+    display: block;
+    background-image: url("../img/dev.jpg");
+    background-attachment: fixed;
+
+    overflow: hidden;
+    .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      .developer,
+      .dev-pic,
+      .content {
+        padding: 2rem;
+        height: 25rem;
+      }
+      .dev-pic {
+        height: 40rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        width: 50%;
+        .pic {
+          display: block;
+          width: 100%;
+          height: 50%;
+          background-image: url("../img/portrait-small.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+      .content {
+        padding-bottom: 5rem;
+      }
+      .developer,
+      .content {
+        margin: 0;
+        padding-top: 2rem;
+      }
+      .dev-title {
+        font-size: 1.7rem;
+        &::first-letter {
+          font-size: 1.9rem;
+        }
+      }
+
+      .dev-subt {
+        font-size: 1.5rem;
+
+        &::first-letter {
+          font-size: 1.7rem;
+        }
+      }
+      .list-p {
+        font-size: 1.2rem;
+      }
+      .dev-p {
+        text-align: center;
+        padding-top: 1rem;
+        font-size: 1.4rem;
+      }
+
+      a {
+        color: set-text-col($primary-color-dark);
+        @include easeIn;
+      }
+    }
+    .source {
+      .dev-subt {
+        font-size: 1.5rem;
+
+        &::first-letter {
+          font-size: 1.2rem;
+        }
+      }
+      .dev-p {
+        font-size: 1.4rem;
+        padding: 0rem;
+      }
+      a {
+        text-align: center;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+//Big
+@include mediaBigL {
+  .menu-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+      "menuimage intro"
+      "dish1 dish2"
+      "dish3 dish4"
+      "dish5 dish6";
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 50px;
+
+    .para {
+      padding: 30px;
+      font-size: 1.5rem;
+      margin-top: 3rem;
+    }
+    .menu-img {
+      margin-top: 40px;
+    }
+    .d-title {
+      font-size: 1.5rem;
+    }
+    .d-subt {
+      font-size: 1rem;
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+  }
+  .restaurants-info {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+      "restaurantimage intro"
+      "restaurant1 restaurant2"
+      "restaurant3 restaurant4"
+      "restaurant5 restaurant6";
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 50px;
+
+    .para {
+      font-size: 1.2rem;
+      padding: 0.5rem;
+      padding-top: 1.5rem;
+    }
+    .adress-p {
+      padding: 20px;
+      font-size: 1.4rem;
+      &.adress-p::first-letter {
+        font-size: 1.5rem;
+      }
+    }
+    .restaurants-img {
+      margin-top: 40px;
+    }
+    .adress-title {
+      font-size: 2rem;
+    }
+  }
+  //developer page
+  #dev-home {
+    display: block;
+    background-image: url("../img/dev.jpg");
+    background-attachment: fixed;
+
+    overflow: hidden;
+    .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      .developer,
+      .dev-pic,
+      .content {
+        padding: 1rem;
+        height: 25rem;
+      }
+      .dev-pic {
+        height: 40rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        width: 50%;
+        .pic {
+          display: block;
+          width: 100%;
+          height: 50%;
+          background-image: url("../img/portrait-small.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+      .content {
+        padding-bottom: 5rem;
+      }
+      .developer,
+      .content {
+        margin: 0;
+        padding-top: 2rem;
+      }
+      .dev-title {
+        font-size: 1.7rem;
+        &::first-letter {
+          font-size: 1.9rem;
+        }
+      }
+
+      .dev-subt {
+        font-size: 1.5rem;
+
+        &::first-letter {
+          font-size: 1.7rem;
+        }
+      }
+      .list-p {
+        font-size: 1.2rem;
+      }
+      .dev-p {
+        text-align: center;
+        padding-top: 1rem;
+        font-size: 1.4rem;
+      }
+
+      a {
+        color: set-text-col($primary-color-dark);
+        @include easeIn;
+      }
+    }
+    .source {
+      .dev-subt {
+        font-size: 1.7rem;
+
+        &::first-letter {
+          font-size: 1.9rem;
+        }
+      }
+      .dev-p {
+        font-size: 1.4rem;
+        padding: 0rem;
+      }
+      a {
+        text-align: center;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+//Large screen
+@include mediaLarge {
+  .img2 {
+    margin-bottom: 0;
+  }
+  main {
+    padding: 2rem;
+  }
+  #home-title {
+    padding-top: 15vh;
+    font-size: 3em;
+  }
+  #home-subtitle {
+    padding-top: 0;
+  }
+}
+//Small wide screen
+@include mediaSmWide {
+  .menu .nav-link {
+    font-size: 1rem;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  .menu-pic .mainpic {
+    background-image: url("../img/mainpic-small.jpg");
+    width: 150px;
+    height: 150px;
+  }
+}
+//Medium wide screen
+@include mediaMdWide {
+  .menu .nav-link {
+    font-size: 0.75rem;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  .menu-pic .mainpic {
+    background-image: url("../img/mainpic-small.jpg");
+    width: 150px;
+    height: 150px;
+  }
+  //developer page
+  #dev-home {
+    display: block;
+    background-image: url("../img/dev.jpg");
+    background-attachment: fixed;
+    overflow: hidden;
+    .container {
+      .dev-pic {
+        width: 50%;
+        margin: auto;
+        .pic {
+          display: block;
+          width: 100%;
+          height: 40%;
+          background-image: url("../img/portrait-small.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+      .developer {
+        padding: 0rem;
+        width: 90%;
+      }
+      .dev-title {
+        font-size: 1.4rem;
+        &::first-letter {
+          font-size: 1.6rem;
+        }
+      }
+
+      .dev-subt {
+        font-size: 1.2rem;
+
+        &::first-letter {
+          font-size: 1.5rem;
+        }
+      }
+      .list-p {
+        font-size: 1rem;
+      }
+      .dev-p {
+        text-align: center;
+        padding-top: 1rem;
+        font-size: 1.2rem;
+      }
+    }
+    .source {
+      .dev-subt {
+        font-size: 1.2rem;
+
+        &::first-letter {
+          font-size: 1.4rem;
+        }
+      }
+      .dev-p {
+        font-size: 1rem;
+        padding: 0rem;
+      }
+      a {
+        font-size: 0.4rem;
+      }
+    }
+  }
+}
+//Small wide screen without menu pic
+@include mediaSmWideNopic {
+  .menu .nav-link {
+    font-size: 0.5rem;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  .menu-pic .mainpic {
+    background-image: none;
+    border: none;
+  }
+  &.menu-pic {
+    visibility: hidden;
+  }
+}
+//Medium wide screen without menu pic
+@include mediaMdWideNopic {
+  .menu {
+    flex-direction: column;
+  }
+  .menu .nav-link {
+    font-size: 0.75rem;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  .menu-pic .mainpic {
+    background-image: url("../img/mainpic-small.jpg");
+    width: 150px;
+    height: 150px;
+  }
+  .menu-pic .mainpic {
+    background-image: none;
+    border: none;
+  }
+  &.menu-pic {
+    visibility: hidden;
+  }
+}
+
+//developer page wide screen flex content
+@include developerWide {
+  #dev-home .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .developer,
+    .dev-pic,
+    .content {
+      padding: 1rem;
+      height: 25rem;
+    }
+    .dev-pic {
+      height: 40rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      width: 50%;
+      .pic {
+        display: block;
+        width: 80%;
+        height: 50%;
+        background-image: url("../img/portrait-small.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    .content {
+      padding-bottom: 2rem;
+    }
+    .dev-title {
+      font-size: 1.7rem;
+      &::first-letter {
+        font-size: 1.9rem;
+      }
+    }
+
+    .dev-subt {
+      font-size: 1.5rem;
+
+      &::first-letter {
+        font-size: 1.7rem;
+      }
+    }
+    .list-p {
+      font-size: 1.2rem;
+    }
+    .dev-p {
+      text-align: center;
+      padding-top: 1rem;
+      font-size: 1.4rem;
+    }
+
+    a {
+      color: set-text-col($primary-color-dark);
+      @include easeIn;
+    }
+  }
+}

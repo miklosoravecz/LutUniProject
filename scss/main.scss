@@ -1,0 +1,844 @@
+@import "config";
+@import "menu";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Esteban", serif;
+  line-height: 1.5;
+  opacity: 1;
+  background-color: $primary-color;
+  color: set-text-col($primary-color);
+  @include easeIn;
+
+  //Dark color theme
+
+  &.dark {
+    background-color: $primary-color-dark;
+    color: set-text-col($primary-color-dark);
+    @include easeIn;
+
+    .menu-img {
+      border: 3px solid darken($primary-color-dark, $amount: 3);
+      @include easeIn;
+    }
+    .restaurants-img {
+      border: 3px solid darken($primary-color-dark, $amount: 3);
+      @include easeIn;
+    }
+    .theme-btn {
+      background-color: $primary-color-dark;
+      &:hover {
+        color: #fff;
+        cursor: pointer;
+        @include easeIn();
+      }
+    }
+    main .icons a {
+      color: set-text-col($primary-color-dark);
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+    .dishes {
+      background: darken($primary-color-dark, $amount: 4);
+      border: 5px solid darken($primary-color-dark, $amount: 3);
+      .grid-img {
+        border: 5px solid darken($primary-color-dark, $amount: 3);
+        @include easeIn;
+      }
+    }
+    .restaurants {
+      background: darken($primary-color-dark, $amount: 4);
+      border: 5px solid darken($primary-color-dark, $amount: 3);
+      @include easeIn;
+      .grid-img {
+        border: 5px solid darken($primary-color-dark, $amount: 3);
+
+        &:hover {
+          opacity: 0.5;
+          border-color: $secondary-color;
+        }
+      }
+      .btn-dark {
+        background: $primary-color-dark;
+        color: set-text-col($primary-color-dark);
+
+        &:hover {
+          color: set-text-col($primary-color);
+          background: $secondary-color;
+        }
+      }
+      .btn-light {
+        color: set-text-col($primary-color-dark);
+        &:hover {
+          color: set-text-col($primary-color);
+        }
+      }
+    }
+    //developer page
+    #dev-home {
+      & .container {
+        @include easeIn;
+        background-color: rgb(79, 80, 92);
+        border: 2px solid set-text-col($primary-color-dark);
+        a {
+          @include easeIn;
+          color: set-text-col($primary-color);
+          font-weight: normal;
+        }
+        .dev-pic {
+          .pic {
+            border: 2px solid set-text-col($primary-color);
+            filter: saturate(50%);
+          }
+        }
+        .list-p {
+          color: set-text-col($primary-color-dark);
+          @include easeIn;
+        }
+        .dev-p::first-letter {
+          text-transform: capitalize;
+          color: set-text-col($primary-color);
+          font-weight: bolder;
+        }
+        .dev-p {
+          @include easeIn;
+          color: set-text-col($primary-color-dark);
+          font-weight: normal;
+          a {
+            &:hover {
+              color: $secondary-color;
+            }
+          }
+        }
+        .dev-title {
+          font-weight: normal;
+        }
+        .dev-title::first-letter {
+          text-transform: capitalize;
+          font-size: 2rem;
+          color: set-text-col($primary-color);
+          font-weight: bolder;
+        }
+        .dev-subt {
+          font-weight: normal;
+        }
+        .dev-subt::first-letter {
+          text-transform: capitalize;
+          font-size: 2rem;
+          color: set-text-col($primary-color);
+          font-weight: bolder;
+        }
+      }
+      .source {
+        border: 2px solid set-text-col($primary-color-dark);
+        @include easeIn;
+        background-color: rgb(79, 80, 92);
+
+        .dev-subt::first-letter {
+          color: set-text-col($primary-color);
+        }
+
+        .dev-p {
+          &::first-letter {
+            color: set-text-col($primary-color);
+          }
+        }
+        a {
+          color: set-text-col($primary-color-dark);
+          @include easeIn;
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+
+        ul {
+          text-shadow: 0 5px 10px rgba(black, 0.5);
+          font-weight: bolder;
+        }
+      }
+    }
+    //contact page
+    #contact {
+      .boxes {
+        div {
+          border: 3.5px darken(set-text-col($primary-color-dark), 15) solid;
+          &:hover {
+            padding: 0.5rem 1.3rem;
+            background: $secondary-color;
+            color: set-text-col($primary-color);
+            .text-secondary {
+              color: set-text-col($primary-color-dark);
+              @include easeIn;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.theme-btn {
+  background-color: $primary-color;
+  color: black;
+  opacity: 0.2;
+  font-size: 0.5rem;
+  font-family: "Esteban", serif;
+  position: fixed;
+  z-index: 4;
+  right: 0px;
+  top: 0px;
+  text-align: center;
+  padding: 0.5rem;
+  margin: 5px;
+  box-shadow: 0 5px 10px rgba(black, 0.5);
+  border-radius: 4px;
+  &:hover {
+    opacity: 0.7;
+    color: darken($secondary-color, 10%);
+    cursor: pointer;
+    @include easeIn();
+  }
+}
+
+#home-title {
+  font-family: "IM Fell English SC", serif;
+  text-align: center;
+  font-size: 4em;
+  padding-top: 10vh;
+  padding-left: 1vh;
+  padding-right: 1vh;
+  overflow: hidden;
+}
+#home-subtitle {
+  font-family: "Mr De Haviland", cursive;
+  text-align: center;
+  border-style: hidden;
+  text-shadow: none;
+  font-size: 3em;
+  padding-top: 5vh;
+  transform: rotate(4deg);
+  z-index: 1;
+}
+
+.text {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: block;
+}
+
+.img2,
+.img3,
+.img4,
+.img5,
+.img7,
+.img8,
+.img9,
+.img10,
+.img11 {
+  position: relative;
+  opacity: 0.6;
+  background-attachment: fixed;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 3px solid darken($primary-color, $amount: 3);
+  border-radius: 1%;
+}
+.img1 {
+  position: relative;
+  background-attachment: fixed;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../img/main.jpg");
+  min-height: 450px;
+  z-index: 0;
+  box-shadow: 0 5px 10px rgba(black, 0.5);
+  border-radius: 4px;
+  border: 3px solid darken($primary-color, $amount: 3);
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgba($primary-color, $background-opacity);
+  }
+}
+.img2 {
+  background-image: url("../img/background22.jpg");
+  min-height: 350px;
+}
+.img3 {
+  background-image: url("../img/background33.jpg");
+  min-height: 350px;
+}
+.img4 {
+  background-image: url("../img/backg.jpg");
+  height: 450px;
+}
+.img5 {
+  background-image: url("../img/menu2.jpg");
+  height: 450px;
+}
+.img7 {
+  background-image: url("../img/menu3.png");
+  height: 450px;
+}
+.img8 {
+  background-image: url("../img/img8.jpg");
+  height: 450px;
+}
+.img9 {
+  background-image: url("../img/img9.jpg");
+  height: 450px;
+}
+.img10 {
+  background-image: url("../img/img10.jpg");
+  height: 450px;
+}
+.img11 {
+  background-image: url("../img/pic11.jpg");
+  height: 450px;
+}
+
+//Headings
+h1,
+h2,
+h3 {
+  font-weight: 450;
+
+  &.bg-heading {
+    text-align: center;
+    font-size: 3rem;
+    font-family: "Cormorant SC", serif;
+  }
+
+  &.sm-heading {
+    text-shadow: 2px 2px darken($secondary-color, $amount: 20);
+    margin: 2rem;
+    border-radius: 20%;
+    border-inline-width: auto;
+    text-align: center;
+    font-size: 2em;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    background: rgba(darken($primary-color, $amount: 6), 0.5);
+    padding-top: 2rem;
+    padding: 20px;
+    opacity: 0.9;
+  }
+}
+
+a {
+  //color: set-text-col($primary-color);
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 80%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  padding: 4rem 4rem 4rem 4rem;
+  min-height: calc(100vh -60px);
+  .icons {
+    margin-top: 1rem;
+    text-align: center;
+
+    a {
+      padding: 0.5rem;
+      color: set-text-col($primary-color);
+      text-decoration: none;
+      @include easeIn;
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+p {
+  text-align: center;
+  padding: 50px;
+
+  &.paragraph::first-letter {
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    color: $secondary-color;
+    font-weight: bolder;
+  }
+}
+
+hr {
+  border: 5px solid darken($primary-color, $amount: 6);
+  border-radius: 10px;
+  opacity: 0.2;
+}
+//picture text
+.text {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: $primary-color;
+  font-size: 26px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+
+  .border {
+    background-color: #111;
+    color: #fff;
+    opacity: 0.5;
+  }
+}
+
+#footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  color: set-text-col($primary-color);
+  height: 60px;
+}
+
+//Menu page and restaurants page
+
+.menu-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "menuimage intro intro "
+    "dish1 dish2 dish3"
+    "dish4 dish5 dish6";
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 40px;
+}
+
+.restaurants-info {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    "restaurantimage intro intro "
+    "restaurant1 restaurant2 restaurant3"
+    "restaurant4 restaurant5 restaurant6";
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 40px;
+}
+
+.menu-img {
+  grid-area: menuimage;
+  margin: auto;
+  border: 3px solid darken($primary-color, $amount: 3);
+  border-radius: 1%;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 5px 10px rgba(black, 0.5);
+  opacity: 0.9;
+  @include easeIn;
+}
+.restaurants-img {
+  grid-area: menuimage;
+  margin: auto;
+  border: 3px solid darken($primary-color, $amount: 3);
+  border-radius: 1%;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 5px 10px rgba(black, 0.5);
+  opacity: 0.9;
+  @include easeIn;
+}
+.intro {
+  grid-area: intro;
+  font-size: 1.5rem;
+  padding-top: 2rem;
+}
+.dish1 {
+  grid-area: dish1;
+}
+.dish2 {
+  grid-area: dish2;
+}
+.dish3 {
+  grid-area: dish3;
+}
+.dish4 {
+  grid-area: dish4;
+}
+.dish5 {
+  grid-area: dish5;
+}
+.dish6 {
+  grid-area: dish6;
+}
+.restaurants-img {
+  grid-area: restaurantimage;
+}
+.restaurant1 {
+  grid-area: restaurant1;
+}
+.restaurant2 {
+  grid-area: restaurant2;
+}
+.restaurant3 {
+  grid-area: restaurant3;
+}
+.restaurant4 {
+  grid-area: restaurant4;
+}
+.restaurant5 {
+  grid-area: restaurant5;
+}
+.dishes {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column wrap;
+  justify-content: center;
+  position: relative;
+  background-color: lighten($primary-color, 5);
+  padding: 0.5rem;
+  border: 5px solid darken($primary-color, $amount: 3);
+  box-shadow: 0 5px 10px rgba(black, 0.5);
+  font-size: 0.7rem;
+  @include easeIn;
+
+  .grid-p::first-letter {
+    text-transform: capitalize;
+    font-size: 1rem;
+    color: $secondary-color;
+    font-weight: bolder;
+  }
+
+  .grid-img {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    border: 3px solid darken($primary-color, $amount: 3);
+    border-radius: 1%;
+    box-shadow: 0 5px 10px rgba(black, 0.5);
+    opacity: 0.9;
+  }
+
+  .d-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px darken($secondary-color, $amount: 20);
+  }
+  .d-subt {
+    font-size: 1rem;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+  .dish-icon,
+  .restaurant-icon {
+    text-align: center;
+    text-shadow: 2px 2px darken($secondary-color, $amount: 20);
+  }
+}
+.img7,
+.img9 {
+  margin-top: 40px;
+}
+
+.restaurants {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column wrap;
+  justify-content: center;
+  position: relative;
+  background-color: lighten($primary-color, 5);
+  padding: 0.5rem;
+  border: 5px solid darken($primary-color, $amount: 3);
+  box-shadow: 0 5px 10px rgba(black, 0.5);
+  font-size: 0.7rem;
+  @include easeIn;
+
+  .grid-img {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    border: 3px solid darken($primary-color, $amount: 3);
+    border-radius: 1%;
+    box-shadow: 0 5px 10px rgba(black, 0.5);
+    opacity: 0.9;
+    @include easeIn;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondary-color;
+      @include easeIn;
+    }
+  }
+
+  .adress-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px darken($secondary-color, $amount: 20);
+  }
+
+  .adress-p {
+    padding: 0;
+
+    &.adress-p::first-letter {
+      text-transform: capitalize;
+      font-size: 1rem;
+      color: $secondary-color;
+      font-weight: bolder;
+    }
+  }
+
+  .btn-dark {
+    background: darken($primary-color, 5);
+    color: set-text-col($primary-color);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 0;
+    margin-bottom: 0.3rem;
+
+    &:hover {
+      background: $secondary-color;
+      color: set-text-col($primary-color-dark);
+      @include easeIn;
+    }
+  }
+
+  .btn-light {
+    font-size: larger;
+    font-style: italic;
+    font-weight: bold;
+    color: set-text-col($primary-color);
+    display: block;
+    padding: 0.7rem 0.5rem;
+    border: 0;
+    margin-bottom: 0.3rem;
+    &:hover {
+      background: $secondary-color;
+      color: set-text-col($primary-color-dark);
+      @include easeIn;
+    }
+  }
+}
+
+//developer page
+#dev-home {
+  background-image: url("../img/dev.jpg");
+  position: relative;
+  background-attachment: fixed;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "DotGothic16", sans-serif;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  opacity: 0.85;
+  //padding: 4rem 4rem 4rem 4rem;
+  min-height: calc(100vh -60px);
+
+  .container {
+    @include easeIn;
+    display: flex;
+    flex-flow: row;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    box-shadow: 0 5px 10px rgba(black, 0.5);
+    margin: 1rem 1rem 0rem 1rem;
+    border: 2px solid set-text-col($primary-color);
+    background-color: rgb(87, 88, 95);
+    opacity: 0.97;
+
+    .developer,
+    .dev-pic,
+    .content {
+      display: flex;
+      float: right;
+      flex-flow: column;
+      padding: 0.5rem;
+      justify-content: center;
+      width: 100%;
+
+      //overflow: hidden;
+    }
+    .dev-pic .pic {
+      display: block;
+      filter: saturate(2);
+      background-image: url("../img/portrait.jpg");
+      background-color: set-text-col($primary-color-dark);
+      opacity: 0.6;
+      width: 100%;
+      height: 50vh;
+      border: 2px solid set-text-col($primary-color-dark);
+      @include easeIn;
+      box-shadow: 0 5px 10px rgba(black, 0.5);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-origin: content-box;
+      align-items: center;
+      justify-content: center;
+    }
+    .developer {
+      text-align: center;
+    }
+    .dev-title {
+      text-shadow: 0 5px 10px rgba(black, 0.5);
+      font-weight: bolder;
+    }
+
+    .dev-title::first-letter {
+      text-transform: capitalize;
+      font-size: 2rem;
+      color: darken(set-text-col($primary-color-dark), 15);
+      font-weight: bolder;
+    }
+
+    .dev-subt {
+      text-shadow: 0 5px 10px rgba(black, 0.5);
+      font-weight: bolder;
+    }
+
+    .dev-subt::first-letter {
+      text-transform: capitalize;
+      font-size: 2rem;
+      color: darken(set-text-col($primary-color-dark), 15);
+      font-weight: bolder;
+    }
+
+    .dev-p {
+      text-shadow: 0 5px 10px rgba(black, 0.5);
+      text-align: center;
+      padding: 1rem;
+      font-weight: bolder;
+
+      &::first-letter {
+        text-transform: capitalize;
+        color: darken(set-text-col($primary-color-dark), 15);
+        font-weight: bolder;
+      }
+    }
+    .list-p {
+      text-align: center;
+      padding: 0;
+      font-weight: bold;
+    }
+    .dev-icons {
+      text-shadow: 0 5px 10px rgba(black, 0.5);
+      text-align: left;
+      font-weight: bolder;
+    }
+    a {
+      color: set-text-col($primary-color-dark);
+      @include easeIn;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+  .source {
+    @include easeIn;
+    box-shadow: 0 5px 10px rgba(black, 0.5);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    margin: 0rem 1rem 1rem 1rem;
+    border: 2px solid set-text-col($primary-color);
+    background-color: rgb(87, 88, 95);
+    opacity: 0.97;
+
+    .dev-subt {
+      text-shadow: 0 5px 10px rgba(black, 0.5);
+      font-weight: bolder;
+      text-align: center;
+    }
+
+    .dev-subt::first-letter {
+      text-transform: capitalize;
+      font-size: 2rem;
+      color: darken(set-text-col($primary-color-dark), 15);
+      font-weight: bolder;
+    }
+
+    .dev-p {
+      text-shadow: 0 5px 10px rgba(black, 0.5);
+      text-align: center;
+      padding: 1rem;
+      font-weight: bolder;
+
+      &::first-letter {
+        text-transform: capitalize;
+        color: darken(set-text-col($primary-color-dark), 15);
+        font-weight: bolder;
+      }
+    }
+    .link1,
+    .link2 {
+      text-align: center;
+    }
+    a {
+      cursor: pointer;
+      color: set-text-col($primary-color);
+      @include easeIn;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+//contact page
+#contact {
+  .section {
+    margin-top: 2rem;
+  }
+  hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+    .text-secondary {
+      color: darken($secondary-color, 25);
+    }
+    div {
+      font-size: 2rem;
+      border: 3.5px darken(set-text-col($primary-color), 15) solid;
+      padding: 1.5rem 2.5 rem;
+      margin-bottom: 3rem;
+      @include easeIn;
+      text-align: center;
+
+      &:hover {
+        padding: 0.5rem 1.3rem;
+        background: $secondary-color;
+        color: set-text-col($primary-color-dark);
+        .text-secondary {
+          color: set-text-col($primary-color);
+          @include easeIn;
+        }
+      }
+    }
+  }
+}
+
+@import "media";
